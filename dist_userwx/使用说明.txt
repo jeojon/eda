@@ -1,0 +1,20 @@
+EDA 实验一：PCB 元件封装编辑器
+
+构建方式：
+CMake + Ninja + MSVC 19.51 x64
+
+wxWidgets：
+D:\wxWeigets\wxWidgets-3.3.3
+
+双击“启动实验一.cmd”运行。
+
+程序已内置四个封装：
+R_0805、HEADER2_1、DIP14、SO14
+
+零基础说明：
+docs\00_零基础先看_封装到底是什么.md
+
+修改入口与架构：
+docs\02_软件架构与修改入口.md
+
+单位统一为毫米。

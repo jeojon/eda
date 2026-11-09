@@ -1,0 +1,12 @@
+# ninja log v7
+1002	7239	8159141457824095	CMakeFiles/EdaLab1ModelTest.dir/tests/model_roundtrip.cpp.obj	d941a296f9f67f6
+676	9939	8159141454558458	CMakeFiles/EdaLab1.dir/src/FootprintModel.cpp.obj	4857295b04368d0b
+1016	11062	8159141457969084	CMakeFiles/EdaLab1ModelTest.dir/src/FootprintModel.cpp.obj	1d3993778a93b2e7
+692	11093	8159141454719004	CMakeFiles/EdaLab1.dir/src/FootprintLibrary.cpp.obj	c0962c7382355658
+11063	17748	8159141558430147	EdaLab1ModelTest.exe	73d5294e97aaa7f6
+294	18896	8159141450735315	CMakeFiles/EdaLab1.dir/src/App.cpp.obj	e4a11e8444bb4953
+710	20707	8159141454936516	CMakeFiles/EdaLab1.dir/src/FootprintCanvas.cpp.obj	5be7f8c98a8a7024
+989	23079	8159141457696258	CMakeFiles/EdaLab1.dir/src/MainFrame.cpp.obj	26acd8dce38f519f
+23080	24459	8159141678608783	EdaLab1.exe	9b856ae84829b913
+78	15040	8159143704388966	CMakeFiles/EdaLab1.dir/src/MainFrame.cpp.obj	26acd8dce38f519f
+15042	17270	8159143854020087	EdaLab1.exe	9b856ae84829b913
