@@ -1,0 +1,26 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "windows-msvc-ninja",
+      "displayName": "Windows MSVC + Ninja Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-msvc",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "wxWidgets_ROOT_DIR": "D:/wxWeigets/wxWidgets-3.3.3",
+        "wxWidgets_LIB_DIR": "D:/wxWeigets/wxWidgets-3.3.3/lib/vc_x64_lib",
+        "wxWidgets_CONFIGURATION": "mswu",
+        "CMAKE_MAKE_PROGRAM": "$env{NINJA_EXE}"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-msvc-release",
+      "configurePreset": "windows-msvc-ninja",
+      "configuration": "Release"
+    }
+  ]
+}
+
