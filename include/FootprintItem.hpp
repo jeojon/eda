@@ -56,6 +56,14 @@ public:
     virtual ItemType GetType() const = 0; //获得元件的类型, 所以类型定义在一个枚举里
     virtual void Translate(double dx, double dy) = 0;  // 这个是元件的整体平移(相对于封装原点,上边有定义), 可以表示这个元件的位置
     virtual std::unique_ptr<FootprintItem> Clone() const = 0; //用于撤销服务和复制粘贴
+    // 判断鼠标是否命中图元，具体算法由子类实现
+    virtual bool HitTest(
+        double x, double y, double tolerance
+    ) const = 0;
+    // 检查图元数据是否合法，失败时可返回错误原因
+    virtual bool Validate(
+        std::string* error = nullptr
+    ) const = 0;
 };
 
 //定义整个封装
@@ -108,13 +116,13 @@ public:
     std::unique_ptr<FootprintItem> Clone() const override; //用于复制撤销, 需要重写
     void Translate(double dx, double dy) override; //相对原点的位置
 
-    Bounds GetBounds(); //返回焊盘的边界(矩形), 用于绘制使用, 比如焊盘需要不是正放置,那外接矩形就和焊盘不重叠
+    Bounds GetBounds()const; //返回焊盘的边界(矩形), 用于绘制使用, 比如焊盘需要不是正放置,那外接矩形就和焊盘不重叠
 
-    bool HitTest(double x, double y, double tolerance); //判断鼠标点击的点是否在焊盘上, 用于鼠标选择焊盘使用, 需要重写
+    bool HitTest(double x, double y, double tolerance) const override;//判断鼠标点击的点是否在焊盘上, 用于鼠标选择焊盘使用, 需要重写
     // 前两个参数判断鼠标的坐标, tolerance是容差, 也就是鼠标点击的点离焊盘的距离小于tolerance就认为是点击了焊盘
 
 
-    bool Validate(std::string* error = nullptr); //一个安全测试函数
+    bool Validate(std::string* error = nullptr) const override; //一个安全测试函数
     // 判断这些数据是否合法, 用于后续使用, 比如这个宽度高度不小于零这种
 };
 
@@ -124,3 +132,6 @@ class GraphicItem : public FootprintItem //除了焊盘的其他元件, 圆弧,�
 public:
     Layer layer = Layer::SilkScreen; //默认为丝印层
 };
+
+
+
