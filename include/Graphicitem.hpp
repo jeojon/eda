@@ -19,7 +19,7 @@ public:
     //基本的参数
     Point2D start; //起点位置
     Point2D end; //终点位置
-    double linewidth =0.15;//线的宽度
+    double lineWidth =0.15;//线的宽度
     std::unique_ptr<FootprintItem> Clone() const override; //用于复制撤销, 需要重写
     void Translate(double dx, double dy) override; //相对原点的位置
 
@@ -41,7 +41,7 @@ public:
     double width = 0.1;//宽度
     double height = 0.1;//高度
     double rotation = 0.0; //旋转角度
-    double linewidth =0.15;//线的宽度
+    double lineWidth =0.15;//线的宽度
     
 
     std::unique_ptr<FootprintItem> Clone() const override; //用于复制撤销, 需要重写
@@ -70,7 +70,7 @@ public:
     double startAngle = 0.0;//起始角度
     double sweepAngle = 90.0;//扫过的角度
     double rotation = 0.0;//旋转角度
-    double lineWidth = 0.155;//线的宽度
+    double lineWidth = 0.15;//线的宽度
 
     std::unique_ptr<FootprintItem> Clone() const override; //用于复制撤销, 需要重写
     void Translate(double dx, double dy) override; //弧平移
